@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reset21 — Emagreça com Segurança e Excelência</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rosa: #F0366A;
+    --rosa-escuro: #c4235a;
+    --rosa-claro: #fde8ef;
+    --verde: #2BAF7E;
+    --verde-escuro: #1e8a63;
+    --verde-claro: #e4f7f0;
+    --branco: #ffffff;
+    --cinza-claro: #f8f8f8;
+    --cinza: #666;
+    --preto: #1a1a1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--preto);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--branco);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo-nav {
+    height: 52px;
+    object-fit: contain;
+  }
+
+  .logo-nav-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--rosa);
+  }
+
+  .logo-nav-text span { color: var(--verde); }
+
+  nav a.btn-nav {
+    background: var(--rosa);
+    color: var(--branco);
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+
+  nav a.btn-nav:hover { background: var(--rosa-escuro); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #fff0f5 0%, #fff 50%, #e4f7f0 100%);
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    min-height: 90vh;
+  }
+
+  .hero-text { max-width: 560px; }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--rosa-claro);
+    color: var(--rosa);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--preto);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span.rosa { color: var(--rosa); }
+  .hero h1 span.verde { color: var(--verde); }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--cinza);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--rosa);
+    color: var(--branco);
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 8px 24px rgba(240,54,106,0.3);
+  }
+
+  .btn-primary:hover {
+    background: var(--rosa-escuro);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background: var(--verde);
+    color: var(--branco);
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 8px 24px rgba(43,175,126,0.3);
+  }
+
+  .btn-secondary:hover {
+    background: var(--verde-escuro);
+    transform: translateY(-2px);
+  }
+
+  .hero-img {
+    width: 420px;
+    max-width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 500px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .placeholder-img {
+    width: 420px;
+    max-width: 100%;
+    border-radius: 20px;
+    height: 480px;
+    background: linear-gradient(135deg, var(--rosa-claro), var(--verde-claro));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cinza);
+    font-size: 14px;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px dashed #ccc;
+  }
+
+  .placeholder-img svg { opacity: 0.4; }
+
+  /* ── SECTION GENÉRICA ── */
+  section { padding: 80px 40px; }
+
+  .section-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rosa);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--cinza);
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  .text-center { text-align: center; margin: 0 auto; max-width: 800px; }
+
+.section-sub { text-align: center; margin: 0 auto; }
+
+  /* ── PILARES ── */
+  .pilares {
+    background: var(--cinza-claro);
+  }
+
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .pilar-card {
+    background: var(--branco);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+  }
+
+  .pilar-card:hover { transform: translateY(-4px); }
+
+  .pilar-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 28px;
+  }
+
+  .pilar-icon.rosa { background: var(--rosa-claro); }
+  .pilar-icon.verde { background: var(--verde-claro); }
+
+  .pilar-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--preto);
+  }
+
+  .pilar-card p {
+    font-size: 14px;
+    color: var(--cinza);
+    line-height: 1.7;
+  }
+
+  /* ── PROFISSIONAIS ── */
+  .profissionais { background: var(--branco); }
+
+  .prof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .prof-card {
+    text-align: center;
+  }
+
+  .prof-foto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 16px;
+    display: block;
+    border: 4px solid var(--rosa-claro);
+    background: linear-gradient(135deg, var(--rosa-claro), var(--verde-claro));
+  }
+
+  .prof-foto-placeholder {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--rosa-claro), var(--verde-claro));
+    border: 4px solid var(--rosa-claro);
+    font-size: 13px;
+    color: var(--cinza);
+    text-align: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .prof-cargo {
+    display: inline-block;
+    background: var(--rosa);
+    color: var(--branco);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .prof-cargo.verde-bg { background: var(--verde); }
+
+  .prof-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .prof-card p {
+    font-size: 14px;
+    color: var(--cinza);
+    line-height: 1.7;
+  }
+
+  /* ── COMO FUNCIONA ── */
+  .como-funciona { background: var(--cinza-claro); }
+
+  .semanas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .semana-card {
+    background: var(--branco);
+    border-radius: 16px;
+    padding: 28px 24px;
+    border-left: 5px solid var(--rosa);
+  }
+
+  .semana-card.verde-border { border-left-color: var(--verde); }
+
+  .semana-num {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--rosa);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .semana-card.verde-border .semana-num { color: var(--verde); }
+
+  .semana-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .semana-card p { font-size: 14px; color: var(--cinza); line-height: 1.7; }
+
+  /* ── O QUE VOCÊ RECEBE ── */
+  .recebe { background: var(--rosa); }
+
+  .recebe .section-tag { color: rgba(255,255,255,0.7); }
+  .recebe .section-title { color: var(--branco); }
+  .recebe .section-sub { color: rgba(255,255,255,0.85); }
+
+  .recebe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .recebe-item {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 20px;
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .recebe-item span.check {
+    background: var(--branco);
+    color: var(--rosa);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    font-weight: 900;
+  }
+
+  /* ── DEPOIMENTOS ── */
+  .depoimentos { background: var(--branco); }
+
+  .dep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .dep-card {
+    background: var(--cinza-claro);
+    border-radius: 16px;
+    padding: 28px 24px;
+    position: relative;
+  }
+
+  .dep-card::before {
+    content: '"';
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--rosa-claro);
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .dep-stars {
+    color: var(--rosa);
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .dep-texto {
+    font-size: 14px;
+    color: var(--cinza);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    margin-top: 8px;
+  }
+
+  .dep-autor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .dep-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--rosa-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--rosa);
+    flex-shrink: 0;
+  }
+
+  .dep-nome { font-weight: 700; font-size: 15px; }
+  .dep-resultado { font-size: 12px; color: var(--verde); font-weight: 700; }
+
+  /* ── MOTIVOS ── */
+  .motivos { background: var(--cinza-claro); }
+
+  .motivos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .motivo-card {
+    background: var(--branco);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .motivo-num {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--rosa-claro);
+    line-height: 1;
+    flex-shrink: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .motivo-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .motivo-card p { font-size: 13px; color: var(--cinza); line-height: 1.6; }
+
+  /* ── PREÇO ── */
+  .preco {
+    background: linear-gradient(135deg, #fff0f5, #e4f7f0);
+    text-align: center;
+  }
+
+  .preco-box {
+    background: var(--branco);
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 480px;
+    margin: 48px auto 0;
+    box-shadow: 0 20px 60px rgba(240,54,106,0.15);
+  }
+
+  .preco-de {
+    font-size: 18px;
+    color: var(--cinza);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .preco-por {
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--rosa);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .preco-por sup { font-size: 28px; vertical-align: top; margin-top: 12px; display: inline-block; }
+
+  .preco-info {
+    font-size: 14px;
+    color: var(--cinza);
+    margin-bottom: 32px;
+  }
+
+  .preco-garantia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--verde);
+    font-weight: 700;
+    margin-top: 20px;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: var(--branco); }
+
+  .faq-lista {
+    max-width: 720px;
+    margin: 48px auto 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+  }
+
+  .faq-pergunta {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--preto);
+    margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .faq-pergunta span.q {
+    background: var(--rosa);
+    color: var(--branco);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .faq-resposta {
+    font-size: 14px;
+    color: var(--cinza);
+    line-height: 1.8;
+    padding-left: 36px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--preto);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px 40px;
+    font-size: 13px;
+  }
+
+  footer strong { color: var(--rosa); }
+
+  /* ── RESPONSIVO ── */
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .hero { padding: 60px 20px; gap: 40px; }
+    .hero h1 { font-size: 34px; }
+    section { padding: 60px 20px; }
+    .section-title { font-size: 28px; }
+    .preco-por { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <!-- SUBSTITUA pela sua logo: <img src="logo.png" class="logo-nav" alt="Reset21"> -->
+  <img src="logo.png" class="logo-nav" alt="Reset21">
+  <a href="#preco" class="btn-nav">Quero participar</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">✦ Profissionais com mais de 10 anos de experiência</div>
+    <h1>Emagreça com<br><span class="rosa">Segurança</span> e<br><span class="verde">Excelência</span></h1>
+    <p>Emagreça com Personal Trainer, Nutricionista e Fisioterapeuta em apenas <strong>21 dias</strong>. Transforme sua rotina com um programa de emagrecimento saudável, prático e eficiente.</p>
+    <a href="#preco" class="btn-primary">Quero começar meu Reset!</a>
+  </div>
+
+  <!-- SUBSTITUA por sua foto hero: <img src="hero.jpg" ...> -->
+  <img src="hero.png" alt="Reset21 equipe" style="width:420px;max-width:100%;border-radius:20px;object-fit:cover;height:480px;">  <div class="placeholder-img" style="display:none;">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+    <span>Coloque aqui sua<br>foto principal<br><small>(hero.jpg)</small></span>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section class="pilares">
+  <div class="text-center">
+    <div class="section-tag">O que é o Reset21</div>
+    <h2 class="section-title">3 pilares para sua transformação</h2>
+    <p class="section-sub">Um programa completo com profissionais especializados, pensado para caber na sua rotina.</p>
+  </div>
+  <div class="pilares-grid">
+    <div class="pilar-card">
+      <div class="pilar-icon rosa">🏋️</div>
+      <h3>Personal Trainer</h3>
+      <p>Treinos metabólicos de 20 minutos elaborados para você fazer em casa, sem equipamentos, com máxima eficiência.</p>
+    </div>
+    <div class="pilar-card">
+      <div class="pilar-icon verde">🥗</div>
+      <h3>Nutricionista</h3>
+      <p>Cardápios personalizados baseados no seu gasto energético basal. Sem restrições malucas, sem passar fome.</p>
+    </div>
+    <div class="pilar-card">
+      <div class="pilar-icon rosa">🧘</div>
+      <h3>Fisioterapeuta</h3>
+      <p>Aulas de LPF (Low Pressure Fitness) para fortalecer o core, melhorar postura e reduzir medidas abdominais.</p>
+    </div>
+    
+  </div>
+</section>
+
+<!-- PROFISSIONAIS -->
+<section class="profissionais">
+  <div class="text-center">
+    <div class="section-tag">Nossa equipe</div>
+    <h2 class="section-title">Conheça os profissionais</h2>
+    <p class="section-sub">Mais de 10 anos de experiência cada um, unidos por um objetivo: a sua transformação.</p>
+  </div>
+  <div class="prof-grid">
+
+    <div class="prof-card">
+      <img src="personal.png" class="prof-foto" alt="Marcelo Hasegawa">
+      <span class="prof-cargo">Personal Trainer</span>
+      <h3>Marcelo Hasegawa</h3>
+      <p>Formado em Educação Física. Especialista em emagrecimento, hipertrofia e treinamento funcional. Mais de 10 anos transformando vidas.</p>
+    </div>
+
+    <div class="prof-card">
+      <img src="nutri.png" class="prof-foto" alt="Joice Harada">
+      <span class="prof-cargo verde-bg">Nutricionista</span>
+      <h3>Joice Harada</h3>
+      <p>Graduada em Nutrição. Pós-graduada em Nutrição na Saúde da Mulher e Emagrecimento. Especialista em reeducação alimentar.</p>
+    </div>
+
+    <div class="prof-card">
+      <img src="fisio.png" class="prof-foto" alt="Priscila Abe">
+      <span class="prof-cargo">Fisioterapeuta</span>
+      <h3>Priscila Abe</h3>
+      <p>Graduada em Fisioterapia. Especialista em Pilates e Licenciada em Low Pressure Fitness (LPF) pela Espanha.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-funciona">
+  <div class="text-center">
+    <div class="section-tag">Como funciona</div>
+    <h2 class="section-title">21 dias divididos em 3 semanas</h2>
+    <p class="section-sub">A cada semana você recebe treinos, cardápio e aulas inéditas. Tudo novo, tudo progressivo.</p>
+  </div>
+  <div class="semanas-grid">
+    <div class="semana-card">
+      <div class="semana-num">01</div>
+      <h3>Semana de Ativação</h3>
+      <p>7 treinos metabólicos de 20 min + 1 aula de LPF + cardápio semana 1. Seu corpo entra no ritmo.</p>
+    </div>
+    <div class="semana-card verde-border">
+      <div class="semana-num">02</div>
+      <h3>Semana de Aceleração</h3>
+      <p>7 treinos inéditos + 1 aula de LPF + cardápio semana 2. Metabolismo no máximo.</p>
+    </div>
+    <div class="semana-card">
+      <div class="semana-num">03</div>
+      <h3>Semana de Transformação</h3>
+      <p>7 treinos finais + 1 aula de LPF + cardápio semana 3. Resultados visíveis e hábitos novos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ RECEBE -->
+<section class="recebe">
+  <div class="text-center">
+    <div class="section-tag">Tudo incluso</div>
+    <h2 class="section-title">Veja o que você vai receber</h2>
+    <p class="section-sub">45 aulas e 9 horas de conteúdo original com acesso por 6 meses.</p>
+  </div>
+  <div class="recebe-grid">
+    <div class="recebe-item"><span class="check">✓</span> 21 aulas de treinos metabólicos</div>
+    <div class="recebe-item"><span class="check">✓</span> 3 cardápios personalizados</div>
+    <div class="recebe-item"><span class="check">✓</span> 3 aulas de LPF + 1 bônus</div>
+    
+    <div class="recebe-item"><span class="check">✓</span> Planner de metas do desafio</div>
+    <div class="recebe-item"><span class="check">✓</span> Vídeo intro ao LPF</div>
+    <div class="recebe-item"><span class="check">✓</span> Aula: Liberação com Bolinhas</div>
+    <div class="recebe-item"><span class="check">✓</span> Aula: Gasto Energético Basal</div>
+    <div class="recebe-item"><span class="check">✓</span> Guia prático de alimentação</div>
+    <div class="recebe-item"><span class="check">✓</span> 2 e-books de LPF</div>
+    <div class="recebe-item"><span class="check">✓</span> 4 e-books sobre alimentação</div>
+    <div class="recebe-item"><span class="check">✓</span> 6 meses de acesso</div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos">
+  <div class="text-center">
+    <div class="section-tag">Resultados reais</div>
+    <h2 class="section-title">O que dizem nossas alunas</h2>
+    <p class="section-sub">100% de satisfação garantida. Veja quem já transformou sua vida com o Reset21.</p>
+  </div>
+  <div class="dep-grid">
+
+    <div class="dep-card">
+      <div class="dep-stars" style="font-size:20px; color:#F0366A;">★★★★★</div>
+      <p class="dep-texto">Participar do desafio foi uma experiência transformadora! Nenhuma dieta restritiva, exercícios adaptados, e o LPF foi a cereja do bolo. Perdi 3kg e 6cm de circunferência abdominal SEM DOR e SEM PASSAR FOME!</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">S</div>
+        <div>
+          <div class="dep-nome">Satie Makino</div>
+          <div class="dep-resultado">−3kg e −6cm em 21 dias</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dep-card">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-texto">Era o incentivo que eu precisava pra voltar a me cuidar. Os cardápios não têm o que reclamar — muita variedade e o mais importante: não passei fome. Em 21 dias consegui perder 3 quilos!</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">G</div>
+        <div>
+          <div class="dep-nome">Gabi Shimoda</div>
+          <div class="dep-resultado">−3kg em 21 dias</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dep-card">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-texto">No final dos 21 dias tive que fechar meu uniforme com cinto pois perdi 18cm de cintura. Tudo é possível se você se organizar e colocar seus objetivos em foco!</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">E</div>
+        <div>
+          <div class="dep-nome">Elaine Iwasaki</div>
+          <div class="dep-resultado">−18cm de cintura!</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 8 MOTIVOS -->
+<section class="motivos">
+  <div class="text-center">
+    <div class="section-tag">Por que escolher</div>
+    <h2 class="section-title">8 motivos para escolher o Reset21</h2>
+  </div>
+  <div class="motivos-grid">
+    <div class="motivo-card"><div class="motivo-num">01</div><div><h3>Treinos Personalizados</h3><p>Um plano de exercícios sob medida, adaptado ao seu nível de condicionamento físico.</p></div></div>
+    <div class="motivo-card"><div class="motivo-num">02</div><div><h3>Cardápio Personalizado</h3><p>Plano alimentar que fornece todos os nutrientes essenciais para perder peso com saúde.</p></div></div>
+    <div class="motivo-card"><div class="motivo-num">03</div><div><h3>Aulas de LPF</h3><p>Fortalecimento do core, melhora da postura e redução da pressão intra-abdominal.</p></div></div>
+    
+    <div class="motivo-card"><div class="motivo-num">05</div><div><h3>Transformação Física e Mental</h3><p>Além de perder peso, mais disposição, autoestima e equilíbrio emocional.</p></div></div>
+    <div class="motivo-card"><div class="motivo-num">06</div><div><h3>Flexibilidade e Conveniência</h3><p>Treinos para fazer em casa, a qualquer hora, sem deslocamento e sem equipamentos.</p></div></div>
+    <div class="motivo-card"><div class="motivo-num">07</div><div><h3>Resultados Rápidos</h3><p>Resultados visíveis em apenas 21 dias com hábitos saudáveis e sustentáveis.</p></div></div>
+    <div class="motivo-card"><div class="motivo-num">08</div><div><h3>Transformação Completa</h3><p>Mais do que perder peso: saúde física, mental e emocional em equilíbrio.</p></div></div>
+  </div>
+</section>
+
+<!-- PREÇO -->
+<section class="preco" id="preco">
+  <div class="section-tag text-center">Investimento</div>
+  <h2 class="section-title text-center">Valor do investimento</h2>
+  <div class="preco-box">
+    <p class="preco-de">De: ¥39.990</p>
+    <div class="preco-por"><sup>¥</sup>9.990</div>
+    <p class="preco-info">Desconto por tempo limitado · 6 meses de acesso</p>
+    <a href="SEU_LINK_DE_PAGAMENTO_AQUI" class="btn-primary" style="display:block; text-align:center;">Garantir minha vaga agora</a>
+    <div class="preco-garantia">🔒 Compra segura · Acesso imediato</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="text-center">
+    <div class="section-tag">Dúvidas</div>
+    <h2 class="section-title">Perguntas frequentes</h2>
+  </div>
+  <div class="faq-lista">
+
+    <div class="faq-item">
+      <div class="faq-pergunta"><span class="q">Q</span>O desafio terá continuidade após 21 dias?</div>
+      <p class="faq-resposta">O Reset21 acontece ao longo de 21 dias, mas todos os materiais ficam disponíveis na plataforma por 6 meses para você rever e repetir quantas vezes quiser.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-pergunta"><span class="q">Q</span>Existe alguma restrição para participar?</div>
+      <p class="faq-resposta">O programa é exclusivo para mulheres, aberto a todas as idades. Não é recomendado para gestantes ou pessoas com condições de saúde que precisem de acompanhamento específico.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-pergunta"><span class="q">Q</span>Preciso de equipamentos para os treinos?</div>
+      <p class="faq-resposta">Não! Os treinos foram elaborados para serem feitos em casa ou em qualquer lugar, sem necessidade de equipamentos. Basta ter acesso à internet.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-pergunta"><span class="q">Q</span>Vou ter suporte durante os 21 dias?</div>
+      <p class="faq-resposta">Sim! Você terá acesso a uma comunidade exclusiva no WhatsApp com suporte contínuo de profissionais especializados e interação com outras participantes.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Copyright © <strong>Reset21</strong> — Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
