@@ -187,7 +187,117 @@
 
   .placeholder-img svg { opacity: 0.4; }
 
-  /* ── SECTION GENÉRICA ── */
+ /* ── BUTTONS ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--rosa);
+  color: var(--branco);
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 8px 24px rgba(240,54,106,0.3);
+}
+
+.btn-primary:hover {
+  background: var(--rosa-escuro);
+  transform: translateY(-2px);
+}
+
+/* ── HERO VENDAS ── */
+.hero-vendas {
+  background: linear-gradient(160deg, #fff0f5 0%, #ffffff 60%, #e4f7f0 100%);
+  padding: 80px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-vendas-inner {
+  max-width: 780px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--rosa-claro);
+  color: var(--rosa);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+
+.hero-headline {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--preto);
+}
+
+.hero-headline .rosa { color: var(--rosa); }
+.hero-headline .verde { color: var(--verde); }
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--cinza);
+  line-height: 1.8;
+  max-width: 640px;
+}
+
+.video-placeholder {
+  width: 100%;
+  max-width: 680px;
+  aspect-ratio: 16/9;
+  background: var(--preto);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.6);
+  font-size: 15px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.video-play-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--rosa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--branco);
+  padding-left: 4px;
+}
+
+.btn-hero-cta {
+  font-size: 20px;
+  padding: 20px 56px;
+  border-radius: 60px;
+}
+
+.hero-garantia {
+  font-size: 13px;
+  color: var(--cinza);
+}
+
+@media (max-width: 768px) {
+  .hero-vendas { padding: 60px 20px; }
+  .hero-headline { font-size: 28px; }
+  .hero-sub { font-size: 16px; }
+  .btn-hero-cta { font-size: 17px; padding: 16px 32px; }
+} /* ── SECTION GENÉRICA ── */
   section { padding: 80px 40px; }
 
   .section-tag {
@@ -336,7 +446,78 @@
     line-height: 1.7;
   }
 
-  /* ── COMO FUNCIONA ── */
+ /* ── BIOGRAFIAS ── */
+.bio-bloco {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.bio-rosa { border-left: 6px solid var(--rosa); }
+.bio-verde { border-left: 6px solid var(--verde); }
+
+.bio-foto {
+  width: 260px;
+  height: 320px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.bio-foto-vertical {
+  width: 200px;
+  height: 240px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.bio-vertical {
+  flex-direction: column;
+}
+
+.bio-duplo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.bio-texto h3 {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 10px 0 12px;
+  color: var(--preto);
+}
+
+.bio-texto p {
+  font-size: 14px;
+  color: var(--cinza);
+  line-height: 1.8;
+  margin-bottom: 6px;
+}
+
+.bio-texto ul {
+  margin: 8px 0 8px 20px;
+}
+
+.bio-texto ul li {
+  font-size: 14px;
+  color: var(--cinza);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .bio-bloco { flex-direction: column; padding: 24px; }
+  .bio-foto { width: 100%; height: 260px; }
+  .bio-foto-vertical { width: 100%; height: 220px; }
+  .bio-duplo { grid-template-columns: 1fr; }
+} /* ── COMO FUNCIONA ── */
   .como-funciona { background: var(--cinza-claro); }
 
   .semanas-grid {
@@ -630,18 +811,32 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <div class="hero-badge">✦ Profissionais com mais de 10 anos de experiência</div>
-    <h1>Emagreça com<br><span class="rosa">Segurança</span> e<br><span class="verde">Excelência</span></h1>
-    <p>Emagreça com Personal Trainer, Nutricionista e Fisioterapeuta em apenas <strong>21 dias</strong>. Transforme sua rotina com um programa de emagrecimento saudável, prático e eficiente.</p>
-    <a href="#preco" class="btn-primary">Quero começar meu Reset!</a>
-  </div>
+<section class="hero hero-vendas">
+  <div class="hero-vendas-inner">
 
-  <!-- SUBSTITUA por sua foto hero: <img src="hero.jpg" ...> -->
-  <img src="hero.png" alt="Reset21 equipe" style="width:420px;max-width:100%;border-radius:20px;object-fit:cover;height:480px;">  <div class="placeholder-img" style="display:none;">
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-    <span>Coloque aqui sua<br>foto principal<br><small>(hero.jpg)</small></span>
+    <div class="hero-badge">⚡ Vagas limitadas — Garanta sua antes que esgote!</div>
+
+    <h1 class="hero-headline">
+      Mora no Japão, trabalha muito e sente que está<br>
+      <span class="rosa">sem tempo para cuidar do corpo e da mente?</span>
+    </h1>
+
+    <p class="hero-sub">
+      O <strong>Reset21</strong> é um desafio de <span style="color:var(--verde);font-weight:700;">21 dias</span> para <span style="color:var(--rosa);font-weight:700;">emagrecer</span>, ganhar disposição, fortalecer a mente e transformar seus hábitos — <strong>sem academia, sem dieta radical e direto da sua casa.</strong>
+    </p>
+
+    <!-- ESPAÇO DO VÍDEO -->
+    <div class="video-placeholder">
+      <div class="video-play-icon">▶</div>
+      <p>Vídeo de apresentação do Reset21</p>
+    </div>
+
+    <a href="#preco" class="btn-primary btn-hero-cta">
+      🚀 Quero começar meu Reset agora!
+    </a>
+
+    <p class="hero-garantia">🔒 Compra segura · Acesso imediato · 6 meses de conteúdo</p>
+
   </div>
 </section>
 
@@ -673,33 +868,66 @@
 </section>
 
 <!-- PROFISSIONAIS -->
+<!-- PROFISSIONAIS -->
 <section class="profissionais">
   <div class="text-center">
     <div class="section-tag">Nossa equipe</div>
     <h2 class="section-title">Conheça os profissionais</h2>
     <p class="section-sub">Mais de 10 anos de experiência cada um, unidos por um objetivo: a sua transformação.</p>
   </div>
-  <div class="prof-grid">
 
-    <div class="prof-card">
-      <img src="personal.png" class="prof-foto" alt="Marcelo Hasegawa">
+  <!-- Bloco 1: Personal - largura total -->
+  <div class="bio-bloco bio-rosa" style="margin-top:48px;">
+    <img src="personal.png" class="bio-foto" alt="Marcelo Hasegawa">
+    <div class="bio-texto">
       <span class="prof-cargo">Personal Trainer</span>
       <h3>Marcelo Hasegawa</h3>
-      <p>Formado em Educação Física. Especialista em emagrecimento, hipertrofia e treinamento funcional. Mais de 10 anos transformando vidas.</p>
+      <p>Formado em Educação Física e Bacharel pela Universidade Paulista desde 2010.</p>
+      <p><strong>Especializações:</strong></p>
+      <ul>
+        <li>Musculação para mulher</li>
+        <li>Hipertrofia e Emagrecimento</li>
+        <li>Treinamento funcional</li>
+        <li>Instrutor de Jump e Ginástica laboral</li>
+        <li>Personal Fitness Trainer Specialist IFBB</li>
+      </ul>
+      <p style="margin-top:12px;">O que mais me motiva é a transformação que a atividade física pode fazer nas pessoas e me sinto extremamente satisfeito em poder contribuir no desenvolvimento pessoal dos meus alunos. Nossa essência é levar o bem estar, a saúde e qualidade de vida para todas as pessoas independente de raça, gênero ou cor. Além de fazer o melhor treino para você, não vou te deixar desistir dos seus objetivos.</p>
+    </div>
+  </div>
+
+  <!-- Bloco 2: Nutri + Fisio lado a lado -->
+  <div class="bio-duplo" style="margin-top:32px;">
+
+    <div class="bio-bloco bio-verde bio-vertical">
+      <img src="nutri.png" class="bio-foto-vertical" alt="Joice Harada">
+      <div class="bio-texto">
+        <span class="prof-cargo verde-bg">Nutricionista</span>
+        <h3>Joice Harada</h3>
+        <p>Graduada em Nutrição desde 2014.</p>
+        <p><strong>Pós-graduada em:</strong></p>
+        <ul>
+          <li>Nutrição na Saúde da Mulher</li>
+          <li>Nutrição Materno Infantil</li>
+          <li>Nutrição Aplicada ao Emagrecimento e Hipertrofia</li>
+        </ul>
+        <p style="margin-top:12px;">O objetivo do meu trabalho é auxiliar mulheres a ter uma alimentação mais saudável e equilibrada através da reeducação alimentar. Respeitando as necessidades, preferências e aversões alimentares de acordo com a cultura alimentar e rotina do dia a dia — <em>"afinal, a rotina de trabalho é bem puxada aqui no Japão"</em>. Te ajudo a conquistar resultados através da simplicidade da alimentação saudável.</p>
+        <p style="margin-top:12px; color: var(--verde); font-weight:700;">"Seja sempre sua prioridade, pois cuidar da alimentação também é um ato de AMOR."</p>
+      </div>
     </div>
 
-    <div class="prof-card">
-      <img src="nutri.png" class="prof-foto" alt="Joice Harada">
-      <span class="prof-cargo verde-bg">Nutricionista</span>
-      <h3>Joice Harada</h3>
-      <p>Graduada em Nutrição. Pós-graduada em Nutrição na Saúde da Mulher e Emagrecimento. Especialista em reeducação alimentar.</p>
-    </div>
-
-    <div class="prof-card">
-      <img src="fisio.png" class="prof-foto" alt="Priscila Abe">
-      <span class="prof-cargo">Fisioterapeuta</span>
-      <h3>Priscila Abe</h3>
-      <p>Graduada em Fisioterapia. Especialista em Pilates e Licenciada em Low Pressure Fitness (LPF) pela Espanha.</p>
+    <div class="bio-bloco bio-rosa bio-vertical">
+      <img src="fisio.png" class="bio-foto-vertical" alt="Priscila Abe">
+      <div class="bio-texto">
+        <span class="prof-cargo">Fisioterapeuta</span>
+        <h3>Priscila Abe</h3>
+        <p>Graduada pela Universidade do Norte do Paraná há 10 anos.</p>
+        <p><strong>Especializações:</strong></p>
+        <ul>
+          <li>Pilates desde 2015 pelo Centro de Estudos Reabilitar</li>
+          <li>Licenciada LOW Pressure Fitness (LPF) desde 2021 pela Internacional Hypopressive & Physical Therapy Institute — Espanha</li>
+        </ul>
+        <p style="margin-top:12px;">Tenho como meta proporcionar o bem estar para o corpo e melhorar a qualidade de vida através do movimento. Me dedico em oferecer tratamentos personalizados, ajudando cada paciente a alcançar seu máximo potencial e recuperação plena.</p>
+      </div>
     </div>
 
   </div>
